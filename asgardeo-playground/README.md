@@ -69,4 +69,3 @@ asgardeo-playground/
  ├── README.md                      * Readme file for the repository
  └── tsconfig.json                  * typescript configuration file.
 
-
