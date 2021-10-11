@@ -44,3 +44,41 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# File Structure 
+gatsby-starter/
+ ├── coverage/                      * unit test coverage reports.
+ ├── cypress/                       * cypress tests folder.
+ ├── docs/                          * contains documents and document resources.
+ ├── i18n/                          * contains i18n translations and config.
+ ├── node_modules/                  * contains dependencies pulled from npm.
+ ├── public/                        * generated public folder for distribution.
+ ├── src/                           * source folder
+ │   ├── assets/                    
+ │   │   ├── images/                * images and icons.
+ │   │   └── styles                 * SASS stylesheets.
+ │   ├── components                 * shared reusable components.
+ │   ├── layouts                    * app layouts.
+ │   ├── models                     * typescript schemas.
+ │   ├── pages                      * app pages.
+ │   └── types                      * custom typings.
+ ├── static                         * contains static assets that needs to be copied to public folder.
+ ├── .eslintignore                  * files and folders that need to be ignored from linter.
+ ├── .eslintrc.js                   * es-lint configuration file.
+ ├── .gitignore                     * contains files that are ignored from git
+ ├── gatsby-browser.js              * where Gatsby expects to find any usage of the Gatsby browser APIs.
+ ├── gatsby-config.js               * main configuration file for a Gatsby site.
+ ├── gatsby-node.js                 * where Gatsby expects to find any usage of the Gatsby Node APIs
+ ├── gatsby-ssr.js                  * where Gatsby expects to find any usage of the Gatsby server-side rendering APIs.
+ ├── CONTRIBUTING.md                * project contributing guidelines
+ ├── cypress.json                   * cypress configuration file.
+ ├── LICENSE.md                     * licensing information.
+ ├── package.json                   * contains all the npm scripts for building, running, deploying etc. and contains all the dependencies
+ ├── package.lock.json              * lock file for npm.
+ ├── postcss.config.js              * post-css configurations.
+ ├── README.md                      * Readme file for the repository
+ ├── tailwind.config.js             * tailwind CSS configuration file.
+ ├── stylelint.config.js            * style lint configuration file.
+ └── tsconfig.json                  * typescript configuration file.
+
+
