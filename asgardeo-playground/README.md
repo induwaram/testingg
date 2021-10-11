@@ -46,6 +46,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 # File Structure 
+```
 asgardeo-playground/
  ├── node_modules/                  * contains dependencies pulled from npm.
  ├── public/                        * generated public folder for distribution.
@@ -69,3 +70,4 @@ asgardeo-playground/
  ├── README.md                      * Readme file for the repository
  └── tsconfig.json                  * typescript configuration file.
 
+```
