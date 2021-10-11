@@ -1,7 +1,7 @@
-### WSO2 Asgardeo Login Playground
+# WSO2 Asgardeo Login Playground
 
 
-# File Structure 
+### File Structure 
 ```
 asgardeo-playground/
  ├── node_modules/                  * contains dependencies pulled from npm.
