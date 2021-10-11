@@ -8,8 +8,7 @@ asgardeo-playground/
  ├── public/                        * generated public folder for distribution.
  ├── src/                           * source folder
  │   ├── assets/                    
- │   │   ├── images/                * images and icons.
- │   │   └── styles                 * SASS stylesheets.
+ │   │   └── images/                * images and icons.
  │   ├── api                        * shared reusable components.
  |   ├── components                 * shared reusable components.
  │   ├── layouts                    * app layouts.

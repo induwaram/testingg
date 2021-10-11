@@ -2,7 +2,7 @@
 function App() {
     return (
         <div className="App">
-            <h1>hey there</h1>
+           <App/>
         </div>
     );
 }
