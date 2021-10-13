@@ -9,7 +9,7 @@ export const AppHeader : React.FC = () => {
         <div>
             <div className="header"></div>
             <div className="pic">
-                <Avatar circle style={{background:'orange',height:100, width:100}}>profile</Avatar>
+                <Avatar size="lg" circle style={{background:'orange',height:100, width:100}}>profile</Avatar>
             </div>
             {/* <div className="header-box">
                 <p>Hey there !</p>
