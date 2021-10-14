@@ -1,0 +1,23 @@
+.header{
+    align-items: center;
+    height: 200px;
+    background: #8E2DE2; 
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); 
+    margin-top: 100px;
+    text-align: center;
+}
+.welcomeText{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    position: relative;
+    top: 80px;
+    left: 30px;
+}
+.bodyText{
+    margin-top: 180px;
+    margin-left: 305px;
+    text-align: center;
+    width: 579px;
+}

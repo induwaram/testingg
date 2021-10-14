@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { AppHeader } from "./components/app-header";
+import { WelcomePage } from "./components/welcome-page";
+
+
 
 ReactDOM.render(
     <React.StrictMode>
-        <AppHeader />
+        <WelcomePage />
     </React.StrictMode>,
     document.getElementById("root")
 );
