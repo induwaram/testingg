@@ -24,5 +24,26 @@
 }
 .pic{
     margin-top: -50px;
-    margin-left:700px;
+    margin-left:650px;
+}
+.body-text{
+    margin-top: 50px;
+    font-size: 25px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.claim-box{
+    background-color: black;
+    width: 600px;
+    margin-left: 400px;
+    height: 82px;
+    color: white;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+}
+.button{
+    margin-left: 660px;
+    margin-top: 50px;
 }
