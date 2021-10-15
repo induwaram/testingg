@@ -8,7 +8,7 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import { Avatar } from "rsuite";
+import { Avatar, Button } from "rsuite";
 import "../assets/styles/headerStyles.css";
 import "rsuite/styles/index.less"; 
 import "rsuite/dist/rsuite.min.css";
@@ -37,6 +37,14 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
             <div className="header"></div>
             <div className="pic">
                 <Avatar size="lg"  circle style={ { background:"orange",height:100, width:100 } }>profile</Avatar>
+            </div>
+            <p className="body-text">You have successfully logged in to the application! </p>
+            <div className="claim-box">claim details</div>
+            <div className="button">
+                <Button appearance="primary"
+                    style={ {
+                        backgroundColor:"#FF7300"
+                    } }>Log Out</Button>    
             </div>
         </div>  
     );
