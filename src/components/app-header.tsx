@@ -9,9 +9,10 @@
 
 import React, { FunctionComponent, ReactElement } from "react";
 import { Avatar, Button } from "rsuite";
-import "../assets/styles/headerStyles.css";
+import "../assets/styles/index.css";
 import "rsuite/styles/index.less"; 
 import "rsuite/dist/rsuite.min.css";
+import "../assets/styles/custom-theme.less";
 import { IdentifiableComponentInterface } from "../models/core";
 
 /**
@@ -29,11 +30,11 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
 ): ReactElement => {
 
     const {
-        [ "data-componentid" ]:testID
+        [ "data-componentid" ]: componentId
     }= props;
 
     return(
-        <div data-componentId={ `${ testID }-app-header` }>
+        <div data-componentId={ componentId }>
             <div className="header"></div>
             <div className="pic">
                 <Avatar size="lg"  circle style={ { background:"orange",height:100, width:100 } }>profile</Avatar>

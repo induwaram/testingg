@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  *
  * WSO2 Inc. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -16,7 +16,6 @@
  * under the License.
  */
 
-import { FunctionComponent, RefObject, SVGProps } from "react";
 /**
   * Alert interface.
   */
@@ -127,81 +126,3 @@ export interface LoadableComponentInterface {
      isLoading?: boolean;
  }
  
-/**
-  * Common interface to be extended to have the `ref` attribute.
-  */
-export interface ReferableComponentInterface<T = {}> {
-     /**
-      * 
-      */
-     ref: RefObject<T>;
-}
- 
-/**
-  * Enum for Product release types.
-  *
-  * @readonly
-  * @enum {string}
-*/
-export enum ProductReleaseTypes {
-     /**
-      * Milestone release.
-      * @type {string}
-      */
-     MILESTONE = "milestone",
-     /**
-      * Alpha release.
-      * @type {string}
-      */
-     ALPHA = "alpha",
-     /**
-      * Beta Release.
-      * @type {string}
-      */
-     BETA = "beta",
-     /**
-      * Release candidate.
-      * @type {string}
-      */
-     RC = "rc"
-}
- 
-/**
-  * Product version configurations interface.
-*/
-export interface ProductVersionConfigInterface {
-     /**
-      * Show snapshot label.
-      */
-     allowSnapshot?: boolean;
-     /**
-      * Color for the release label.
-      */
-     labelColor?: "auto" | "primary" | "secondary" | string;
-     /**
-      * Override the parent POM version.
-      */
-     versionOverride?: string;
-     /**
-      * Text case.
-      */
-     textCase?: "lowercase" | "uppercase";
-     /**
-      * Label position.
-      */
-     labelPosition?: "absolute" | "relative";
-}
- 
-/**
-  * Interface for lazily loaded imported SVGs loaded using svgr webpack loader.
-  */
-export interface SVGRLoadedInterface {
-     /**
-      * Image as React Component.
-      */
-     ReactComponent:  FunctionComponent<SVGProps<SVGSVGElement>>;
-     /**
-      * Image as Data URL.
-      */
-     default: string;
- }
