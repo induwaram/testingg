@@ -7,7 +7,7 @@
     margin-top: 100px;
     text-align: center;
 }
-.welcomeText{
+.welcome-text{
     text-align: center;
     color: white;
     font-size: 25px;
@@ -15,7 +15,7 @@
     top: 80px;
     left: 30px;
 }
-.bodyText{
+.body-text{
     margin-top: 180px;
     margin-left: 500px;
     text-align: center;

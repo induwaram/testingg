@@ -8,18 +8,18 @@
  */
 
 import React from "react";
-import "../assets/styles/welcome-page.css";
+import "../assets/styles/landing.css";
 
-export const WelcomePage :React.FC =() =>{
+export const Landing :React.FunctionComponent =() =>{
     return(
         <div>
             <div className="header">
-                <div className="welcomeText">
+                <div className="welcome-text">
                     <p>Hey There,  Welcome to Asgardeo Playground !</p>
                 </div>
             </div>
-            <p className="bodyText">You can visit <span style={ { color:"#FF7300" } }>console</span> to make an account 
-            and try out the playground </p>
+            <p className="body-text">You can visit <span style={ { color:"#FF7300" } }>console</span> to make an account
+             and try out the playground </p>
         </div>
     ); 
 };
