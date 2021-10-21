@@ -9,7 +9,8 @@ asgardeo-playground/
  ├── src/                           * source folder
  │   ├── assets/                    
  │   │   └── images/                * images and icons.
- │   ├── api                        * shared reusable components.
+ |   |   └── styles/                * stylings.
+ │   ├── api                        * contains api calls
  |   ├── components                 * shared reusable components.
  │   ├── layouts                    * app layouts.
  │   ├── models                     * typescript schemas.
