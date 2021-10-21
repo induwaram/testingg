@@ -8,7 +8,7 @@
  */
 
 import React from "react";
-import "../assets/styles/welcomePage.css";
+import "../assets/styles/welcome-page.css";
 
 export const WelcomePage :React.FC =() =>{
     return(
@@ -23,3 +23,4 @@ export const WelcomePage :React.FC =() =>{
         </div>
     ); 
 };
+
