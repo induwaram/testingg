@@ -19,12 +19,14 @@ import { IdentifiableComponentInterface } from "../models/core";
  * Application Header props interface.
  */
 export type HeaderPropsInterface = IdentifiableComponentInterface;
+
 /**
   * Application Header component.
   *
   * @param {AppHeaderPropsInterface} props - Props injected to the component.
   * @return {React.ReactElement}
   */
+ 
 export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
     props: HeaderPropsInterface
 ): ReactElement => {
