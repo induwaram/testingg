@@ -11,11 +11,14 @@ import React, { ReactElement } from "react";
 import { AppHeader } from "./components";
 
 /**
- * Main app component
+ * Main App component.
+ *
+ * @return {React.Element}
  */
 export const App = (): ReactElement => {
+
     return (
-        <div >
+        <div>
             <AppHeader />
         </div>
     );
