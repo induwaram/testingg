@@ -60,4 +60,11 @@
 .button {
     margin-left: 660px;
     margin-top: 50px;
+
+}
+.logo{
+    margin-left: 600px;
+    height: 60px;
+    width: 200px;
+    cursor: pointer ;
 }
