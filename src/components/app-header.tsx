@@ -13,6 +13,7 @@ import "../assets/styles/index.css";
 import "rsuite/styles/index.less"; 
 import "rsuite/dist/rsuite.min.css";
 import "../assets/styles/custom-theme.less";
+import logo from "../assets/images/branding/asgardeo-logo.svg"
 import { IdentifiableComponentInterface } from "../models/core";
 
 /**
@@ -27,7 +28,7 @@ export type HeaderPropsInterface = IdentifiableComponentInterface;
   * @return {React.ReactElement}
   */
  
-export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
+export const App: FunctionComponent<HeaderPropsInterface> = (
     props: HeaderPropsInterface
 ): ReactElement => {
 
@@ -35,16 +36,25 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
         [ "data-componentid" ]: componentId
     }= props;
 
+    const closeTab = () => {
+        window.close();
+    };
+
+    const asgardeoOpen = () => {
+        window.open("https://wso2.com/asgardeo/");
+    };
+
     return(
         <div data-componentId={ componentId }>
+            <img src ={ logo } className="logo" onClick={ asgardeoOpen }  ></img>
             <div className="header"></div>
             <div className="pic">
-                <Avatar size="lg"  circle style={ { background:"orange",height:100, width:100 } }>profile</Avatar>
+                <Avatar size="lg" circle style={ { background:"orange",height:100, width:100 } }>profile</Avatar>
             </div>
             <p className="body-text">You have successfully logged in to the application! </p>
             <div className="claim-box">claim details</div>
             <div className="button">
-                <Button appearance="primary"
+                <Button onClick={ closeTab } appearance="primary"
                     style={ {
                         backgroundColor:"#FF7300"
                     } }>Log Out</Button>    
