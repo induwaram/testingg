@@ -10,6 +10,9 @@
 import React, { ReactElement } from "react";
 import { AppHeader } from "./components";
 
+/**
+ * Main app component
+ */
 export const App = (): ReactElement => {
     return (
         <div >
