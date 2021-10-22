@@ -13,7 +13,7 @@ import "../assets/styles/index.css";
 import "rsuite/styles/index.less"; 
 import "rsuite/dist/rsuite.min.css";
 import "../assets/styles/custom-theme.less";
-import logo from "../assets/images/branding/asgardeo-logo.svg"
+import logo from "../assets/images/branding/asgardeo-logo.svg";
 import { IdentifiableComponentInterface } from "../models/core";
 
 /**
@@ -28,7 +28,7 @@ export type HeaderPropsInterface = IdentifiableComponentInterface;
   * @return {React.ReactElement}
   */
  
-export const App: FunctionComponent<HeaderPropsInterface> = (
+export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
     props: HeaderPropsInterface
 ): ReactElement => {
 
