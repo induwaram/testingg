@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { WelcomePage } from "./components/welcome-page";
-
+import { App } from "./components/landing";
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <WelcomePage />
+        <App />
     </React.StrictMode>,
     document.getElementById("root")
 );

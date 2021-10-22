@@ -10,7 +10,7 @@
 import React from "react";
 import "../assets/styles/landing.css";
 
-export const Landing :React.FunctionComponent =() =>{
+export const App :React.FunctionComponent =() =>{
     return(
         <div>
             <div className="header">
