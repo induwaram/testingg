@@ -36,17 +36,24 @@ export const App: FunctionComponent<HeaderPropsInterface> = (
         [ "data-componentid" ]: componentId
     }= props;
 
-    const closeTab = () => {
+    /**
+     * function for the on logout click
+     */
+    const onLogout = () => {
         window.close();
     };
 
-    const asgardeoOpen = () => {
+    
+    /**
+     * function for the on Log out click
+     */
+    const onLogoClick = () => {
         window.open("https://wso2.com/asgardeo/");
     };
 
     return(
         <div data-componentId={ componentId }>
-            <img src ={ logo } className="logo" onClick={ asgardeoOpen }  ></img>
+            <img src ={ logo } className="logo" onClick={ onLogoClick }  ></img>
             <div className="header"></div>
             <div className="pic">
                 <Avatar size="lg" circle style={ { background:"orange",height:100, width:100 } }>profile</Avatar>
@@ -54,7 +61,7 @@ export const App: FunctionComponent<HeaderPropsInterface> = (
             <p className="body-text">You have successfully logged in to the application! </p>
             <div className="claim-box">claim details</div>
             <div className="button">
-                <Button onClick={ closeTab } appearance="primary"
+                <Button onClick={ onLogout } appearance="primary"
                     style={ {
                         backgroundColor:"#FF7300"
                     } }>Log Out</Button>    

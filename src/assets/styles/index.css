@@ -13,12 +13,10 @@
     background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
     background: linear-gradient(to right, #4A00E0, #8E2DE2); 
 }
-
 .avatar {
     background-color: black;
     height: fit-content;
 }
-
 .header-box {
     background-color: black;
     border-color: black;
@@ -33,12 +31,10 @@
     text-align: center;
     border-width: 2;
 }
-
 .pic {
     margin-top: -50px;
     margin-left:650px;
 }
-
 .body-text {
     margin-top: 50px;
     font-size: 25px;
@@ -56,13 +52,12 @@
     border-radius: 10px;
     text-align: center;
 }
-
 .button {
     margin-left: 660px;
     margin-top: 50px;
 
 }
-.logo{
+.logo {
     margin-left: 600px;
     height: 60px;
     width: 200px;
