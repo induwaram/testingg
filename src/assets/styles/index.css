@@ -1,14 +1,25 @@
-.header{
+/**
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.com). All Rights Reserved.
+ *
+ * This software is the property of WSO2 Inc. and its suppliers, if any.
+ * Dissemination of any information or reproduction of any material contained
+ * herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ * You may not alter or remove any copyright or other notice from copies of this content."
+ */
+
+.header {
     height: 200px;
     background: #8E2DE2; 
     background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
     background: linear-gradient(to right, #4A00E0, #8E2DE2); 
 }
-.avatar{
+
+.avatar {
     background-color: black;
     height: fit-content;
 }
-.header-box{
+
+.header-box {
     background-color: black;
     border-color: black;
     width: 200px;
@@ -22,18 +33,20 @@
     text-align: center;
     border-width: 2;
 }
-.pic{
+
+.pic {
     margin-top: -50px;
     margin-left:650px;
 }
-.body-text{
+
+.body-text {
     margin-top: 50px;
     font-size: 25px;
     margin-bottom: 50px;
     text-align: center;
 }
 
-.claim-box{
+.claim-box {
     background-color: black;
     width: 600px;
     margin-left: 400px;
@@ -43,7 +56,15 @@
     border-radius: 10px;
     text-align: center;
 }
-.button{
+
+.button {
     margin-left: 660px;
     margin-top: 50px;
+}
+
+.logo {
+    margin-left: 600px;
+    height: 60px;
+    width: 200px;
+    cursor: pointer ;
 }

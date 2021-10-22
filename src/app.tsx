@@ -7,13 +7,19 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { App } from "./app";
+import React, { ReactElement } from "react";
+import { AppHeader } from "./components";
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById("root")
-);
+/**
+ * Main App component.
+ *
+ * @return {React.Element}
+ */
+export const App = (): ReactElement => {
+
+    return (
+        <div>
+            <AppHeader />
+        </div>
+    );
+};
