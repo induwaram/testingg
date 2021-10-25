@@ -8,8 +8,11 @@
  */
 
 import React, { ReactElement } from "react";
+
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { LandingPage } from "./pages";
+import { AppHeader } from "./components";
+
 
 /**
  * Main App component.
