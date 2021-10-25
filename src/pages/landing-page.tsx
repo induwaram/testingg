@@ -15,7 +15,7 @@ import "../assets/styles/landing.css";
 /**
  * Application Landing page props interface.
  */
-export type LandingPropsInterface =  IdentifiableComponentInterface;
+export type LandingPropsInterface = IdentifiableComponentInterface;
 
 /**
   * Landing page
