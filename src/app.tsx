@@ -8,7 +8,11 @@
  */
 
 import React, { ReactElement } from "react";
+
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import { LandingPage } from "./pages";
 import { AppHeader } from "./components";
+
 
 /**
  * Main App component.
@@ -19,7 +23,13 @@ export const App = (): ReactElement => {
 
     return (
         <div>
-            <AppHeader />
+            <Router>
+                <Route path="/" exact>
+                </Route>
+                <Route path="/landing" >
+                    <LandingPage />
+                </Route>
+            </Router>
         </div>
     );
 };
