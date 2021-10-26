@@ -7,24 +7,22 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import React, { ReactElement } from "react";
-
+import React, { FunctionComponent, ReactElement } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
-import { LandingPage } from "./pages";
-import { AppHeader } from "./components";
-
+import { HomePage, LandingPage } from "./pages";
 
 /**
  * Main App component.
  *
  * @return {React.Element}
  */
-export const App = (): ReactElement => {
+export const App: FunctionComponent = (): ReactElement => {
 
     return (
         <div>
             <Router>
                 <Route path="/" exact>
+                    <HomePage />
                 </Route>
                 <Route path="/landing" >
                     <LandingPage />
