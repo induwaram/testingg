@@ -16,12 +16,13 @@ import { LandingPage } from "./pages";
  *
  * @return {React.Element}
  */
-export const App = (): ReactElement => {
+export const App: FunctionComponent = (): ReactElement => {
 
     return (
         <div>
             <Router>
                 <Route path="/" exact>
+                    <HomePage />
                 </Route>
                 <Route path="/landing" >
                     <LandingPage />
