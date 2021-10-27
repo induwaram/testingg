@@ -7,27 +7,27 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import React, { ReactElement } from "react";
-
+import React, { FunctionComponent, ReactElement } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
-import { LandingPage } from "./pages";
-import { AppHeader } from "./components";
-
+import { HomePage, LandingPage } from "./pages";
+import "./assets/styles/index.css";
+import "rsuite/dist/rsuite.min.css";
 
 /**
  * Main App component.
  *
  * @return {React.Element}
  */
-export const App = (): ReactElement => {
+export const App: FunctionComponent = (): ReactElement => {
 
     return (
         <div>
             <Router>
                 <Route path="/" exact>
-                </Route>
-                <Route path="/landing" >
                     <LandingPage />
+                </Route>
+                <Route path="/home" >
+                    <HomePage />
                 </Route>
             </Router>
         </div>

@@ -8,11 +8,8 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import { Avatar, Button } from "rsuite";
-import "../assets/styles/index.css";
-import "rsuite/styles/index.less"; 
-import "rsuite/dist/rsuite.min.css";
-import "../assets/styles/custom-theme.less";
+import { Button, FlexboxGrid, Header } from "rsuite";
+import FlexboxGridItem from "rsuite/esm/FlexboxGrid/FlexboxGridItem";
 import logo from "../assets/images/branding/asgardeo-logo.svg";
 import { IdentifiableComponentInterface } from "../models/core";
 
@@ -35,15 +32,7 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
     const {
         [ "data-componentid" ]: componentId
     }= props;
-
-    /**
-     * function for the on logout click
-     */
-    const onLogout = () => {
-        window.close();
-    };
-
-    
+ 
     /**
      * function for the on Log out click
      */
@@ -52,20 +41,15 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
     };
 
     return(
-        <div data-componentId={ componentId }>
-            <img src ={ logo } className="logo" onClick={ onLogoClick }  ></img>
-            <div className="header"></div>
-            <div className="pic">
-                <Avatar size="lg" circle style={ { background:"orange",height:100, width:100 } }>profile</Avatar>
-            </div>
-            <p className="body-text">You have successfully logged in to the application! </p>
-            <div className="claim-box">claim details</div>
-            <div className="button">
-                <Button onClick={ onLogout } appearance="primary"
-                    style={ {
-                        backgroundColor:"#FF7300"
-                    } }>Log Out</Button>    
-            </div>
-        </div>  
+        <Header data-componentId={ componentId } >
+            <FlexboxGrid>
+                <FlexboxGridItem colspan={ 23 }>
+                    <img src ={ logo } className="logo" onClick={ onLogoClick }></img>
+                </FlexboxGridItem>
+                <FlexboxGridItem>
+                    <Button appearance="primary">Docs</Button>
+                </FlexboxGridItem>
+            </FlexboxGrid>    
+        </Header>
     );
 };

@@ -7,27 +7,44 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-.header-landing {
-    align-items: center;
+.header-home {
     height: 200px;
     background: #8E2DE2; 
     background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
     background: linear-gradient(to right, #4A00E0, #8E2DE2); 
-    margin-top: 10px;
-    text-align: center;
 }
 
-.welcome-text-landing {
-    text-align: center;
-    color: white;
+.avatar {
+    background-color: black;
+    height: fit-content;
+}
+
+.pic {
+    margin-top: -50px;
+    margin-left:650px;
+}
+
+.body-text-home {
+    margin-top: 50px;
     font-size: 25px;
-    position: relative;
-    top: 80px;
-    left: 30px;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
-.body-text-landing {
-    margin-top: 100px;
-    margin-bottom: 100px;
+.claim-box {
+    background-color: black;
+    width: 600px;
+    margin-left: 400px;
+    height: 82px;
+    color: white;
+    justify-content: center;
+    border-radius: 10px;
     text-align: center;
+}
+
+.button-home {
+    justify-content: center;
+    margin-left: 660px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
