@@ -7,6 +7,7 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
+import { useAuthContext } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement } from "react";
 import { Container, Content, Footer} from "rsuite";
 import { AppHeader } from "../components";
@@ -31,6 +32,12 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
         ["data-componentid"]: componentId
     }= props;
 
+    /**
+     * Using the useAuthContext()hook
+     * 
+     */
+    const { state, signIn, signOut } = useAuthContext();
+    
     return(
         <div data-componentId = { componentId }>
             <Container>
@@ -44,6 +51,21 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                         </div>
                         <p className="body-text-landing">You can visit <span style={ { color:"#FF7300" } }>
                             console</span> to make an account and try out the playground </p>
+                    </div>
+                    <div>
+                        {
+                            state.isAuthenticated
+                                ? (
+                                    <div>
+                                        <ul>
+                                            <li>{ state.username }</li>
+                                        </ul>
+
+                                        <button onClick={ () => signOut() }>Logout</button>
+                                    </div>
+                                )
+                                : <button onClick={ () => signIn() }>Login</button>
+                        }
                     </div>
                 </Content>
                 <Footer>
