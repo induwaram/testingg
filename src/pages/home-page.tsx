@@ -62,7 +62,9 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                     </div>
                 </Content>
                 <Footer>
-                    footer to be included
+                    <div className="footer">
+                        Powered By Asgardeo | 2021
+                    </div>
                 </Footer>
             </Container>
         </div>  

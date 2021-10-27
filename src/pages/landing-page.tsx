@@ -11,6 +11,7 @@ import React, { FunctionComponent, ReactElement } from "react";
 import { Container, Content, Footer, Header } from "rsuite";
 import { IdentifiableComponentInterface } from "../models/core";
 import "../assets/styles/index.css";
+import { AppHeader } from "../components";
 
 /**
  * Application Landing page props interface.
@@ -34,9 +35,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
     return(
         <div data-componentId = { componentId }>
             <Container>
-                <Header>
-                    header to be included
-                </Header>
+                <AppHeader />
                 <Content> 
                     <div>
                         <div className="header-landing">
@@ -49,7 +48,9 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                     </div>
                 </Content>
                 <Footer>
-                    footer to be included
+                    <div className="footer">
+                        Powered By Asgardeo | 2021
+                    </div>
                 </Footer>
             </Container>
         </div>
