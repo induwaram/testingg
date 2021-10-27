@@ -8,8 +8,6 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import "../assets/styles/index.css";
-import "rsuite/dist/rsuite.min.css";
 import { Button, FlexboxGrid, Header } from "rsuite";
 import FlexboxGridItem from "rsuite/esm/FlexboxGrid/FlexboxGridItem";
 import logo from "../assets/images/branding/asgardeo-logo.svg";
