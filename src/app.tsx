@@ -7,6 +7,7 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
+import { AuthProvider } from "@asgardeo/auth-react";
 import React, { ReactElement } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { LandingPage } from "./pages";
@@ -19,14 +20,22 @@ import { LandingPage } from "./pages";
 export const App = (): ReactElement => {
 
     return (
-        <div>
+        <AuthProvider
+            config={ {
+                clientID: "IMnXnK9D98XYlv06lNG_fkawrXAa",
+                scope: ["openid", "profile"],
+                serverOrigin: "https://stage.api.asgardeo.io/t/wsow",
+                signInRedirectURL: "http://localhost:3000/",
+                signOutRedirectURL: "http://localhost:3000/"
+            } }
+        >
             <Router>
                 <Route path="/" exact>
                 </Route>
-                <Route path="/landing" >
+                <Route path="/landing">
                     <LandingPage />
                 </Route>
             </Router>
-        </div>
+        </AuthProvider>
     );
 };
