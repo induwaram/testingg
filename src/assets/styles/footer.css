@@ -7,6 +7,6 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-@import url("./app-header.css");
-@import url("./landing.css");
-@import url("./footer.css");
+ .footer {
+    text-align: center;
+}
