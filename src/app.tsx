@@ -63,6 +63,8 @@ export const App: FunctionComponent = (): ReactElement => {
         >
             <Router>
                 <Route path="/" exact>
+                </Route>
+                <Route path="/landing">
                     <LandingPage />
                 </Route>
                 <SecureRouteWithRedirect exact path="/home" component={ HomePage } />
