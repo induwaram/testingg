@@ -9,7 +9,8 @@
 
 import React, { ReactElement } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
-import { LandingPage } from "./pages";
+import { HomePage, LandingPage } from "./pages";
+import "./assets/styles/index.css";
 
 /**
  * Main App component.

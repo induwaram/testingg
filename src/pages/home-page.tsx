@@ -9,9 +9,6 @@
 
 import React, { FunctionComponent, ReactElement } from "react";
 import { Avatar, Button, Container, Content, Footer } from "rsuite";
-import "../assets/styles/index.css";
-import "rsuite/styles/index.less"; 
-import "rsuite/dist/rsuite.min.css";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
 
