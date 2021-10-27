@@ -34,10 +34,10 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
     }= props;
 
     /**
-     * Using the useAuthContext() hook
+     * Using the useAuthContext()hook
      * 
      */
-    const { state, signIn } = useAuthContext();
+    const { state, signIn, signOut } = useAuthContext();
     
     return(
         <div data-componentId = { componentId }>
@@ -68,6 +68,21 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                                     <div>{ state.username }</div>
                                 </div>
                                 
+                        }
+                    </div>
+                    <div>
+                        {
+                            state.isAuthenticated
+                                ? (
+                                    <div>
+                                        <ul>
+                                            <li>{ state.username }</li>
+                                        </ul>
+
+                                        <button onClick={ () => signOut() }>Logout</button>
+                                    </div>
+                                )
+                                : <button onClick={ () => signIn() }>Login</button>
                         }
                     </div>
                 </Content>
