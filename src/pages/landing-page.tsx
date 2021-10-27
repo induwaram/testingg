@@ -10,7 +10,7 @@
 import React, { FunctionComponent, ReactElement } from "react";
 import { Container, Content, Footer, Header } from "rsuite";
 import { IdentifiableComponentInterface } from "../models/core";
-import "../assets/styles/landing.css";
+import "../assets/styles/index.css";
 
 /**
  * Application Landing page props interface.
@@ -39,13 +39,13 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                 </Header>
                 <Content> 
                     <div>
-                        <div className="header">
-                            <div className="welcome-text">
+                        <div className="header-landing">
+                            <div className="welcome-text-landing">
                                 <p>Hey There,  Welcome to Asgardeo Playground !</p>
                             </div>
                         </div>
-                        <p className="body-text">You can visit <span style={ { color:"#FF7300" } }>console</span> to 
-                        make an account and try out the playground </p>
+                        <p className="body-text-landing">You can visit <span style={ { color:"#FF7300" } }>
+                            console</span> to make an account and try out the playground </p>
                     </div>
                 </Content>
                 <Footer>

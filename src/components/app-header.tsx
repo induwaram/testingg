@@ -8,9 +8,9 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import "../assets/styles/app-header.css";
+import "../assets/styles/index.css";
 import "rsuite/dist/rsuite.min.css";
-import { Button, FlexboxGrid } from "rsuite";
+import { Button, FlexboxGrid, Header } from "rsuite";
 import FlexboxGridItem from "rsuite/esm/FlexboxGrid/FlexboxGridItem";
 import logo from "../assets/images/branding/asgardeo-logo.svg";
 import { IdentifiableComponentInterface } from "../models/core";
@@ -43,7 +43,7 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
     };
 
     return(
-        <div data-componentId={ componentId }>
+        <Header data-componentId={ componentId } >
             <FlexboxGrid>
                 <FlexboxGridItem colspan={ 23 }>
                     <img src ={ logo } className="logo" onClick={ onLogoClick }></img>
@@ -52,7 +52,6 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
                     <Button appearance="primary">Docs</Button>
                 </FlexboxGridItem>
             </FlexboxGrid>    
-        </div>
-     
+        </Header>
     );
 };

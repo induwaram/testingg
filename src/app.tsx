@@ -22,10 +22,10 @@ export const App: FunctionComponent = (): ReactElement => {
         <div>
             <Router>
                 <Route path="/" exact>
-                    <HomePage />
-                </Route>
-                <Route path="/landing" >
                     <LandingPage />
+                </Route>
+                <Route path="/home" >
+                    <HomePage />
                 </Route>
             </Router>
         </div>
