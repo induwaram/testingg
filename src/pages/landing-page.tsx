@@ -8,10 +8,9 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import { Container, Content, Footer, Header } from "rsuite";
-import { IdentifiableComponentInterface } from "../models/core";
-import "../assets/styles/index.css";
+import { Container, Content, Footer} from "rsuite";
 import { AppHeader } from "../components";
+import { IdentifiableComponentInterface } from "../models/core";
 
 /**
  * Application Landing page props interface.
