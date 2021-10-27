@@ -7,13 +7,10 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import React, { ReactElement } from "react";
+import { AuthProvider } from "@asgardeo/auth-react";
+import React, { FunctionComponent, ReactElement } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { HomePage, LandingPage } from "./pages";
-
-import React, { ReactElement } from "react";
-import { Route, BrowserRouter as Router } from "react-router-dom";
-import { LandingPage } from "./pages";
 
 /**
  * Main App component.
@@ -23,7 +20,15 @@ import { LandingPage } from "./pages";
 export const App: FunctionComponent = (): ReactElement => {
 
     return (
-        <div>
+        <AuthProvider
+            config={ {
+                clientID: "IMnXnK9D98XYlv06lNG_fkawrXAa",
+                scope: ["openid", "profile"],
+                serverOrigin: "https://stage.api.asgardeo.io/t/wsow",
+                signInRedirectURL: "http://localhost:3000/",
+                signOutRedirectURL: "http://localhost:3000/"
+            } }
+        >
             <Router>
                 <Route path="/" exact>
                     <LandingPage />
@@ -32,6 +37,6 @@ export const App: FunctionComponent = (): ReactElement => {
                     <HomePage />
                 </Route>
             </Router>
-        </div>
+        </AuthProvider>
     );
 };
