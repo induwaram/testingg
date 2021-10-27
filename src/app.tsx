@@ -10,8 +10,10 @@
 import React, { ReactElement } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { HomePage, LandingPage } from "./pages";
-import "./assets/styles/index.css";
-import "rsuite/dist/rsuite.min.css";
+
+import React, { ReactElement } from "react";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import { LandingPage } from "./pages";
 
 /**
  * Main App component.
