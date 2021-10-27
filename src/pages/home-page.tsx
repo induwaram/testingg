@@ -8,8 +8,8 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import { Avatar, Button, Container, Content, Footer, Header } from "rsuite";
-import "../assets/styles/home-page.css";
+import { Avatar, Button, Container, Content, Footer } from "rsuite";
+import "../assets/styles/index.css";
 import "rsuite/styles/index.less"; 
 import "rsuite/dist/rsuite.min.css";
 import { AppHeader } from "../components";
@@ -45,18 +45,16 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
     return(
         <div data-componentId={ componentId }>
             <Container>
-                <Header>
-                    <AppHeader />
-                </Header>
-                <Content> 
-                    <div className="header"></div>
+                <AppHeader />
+                <Content>
+                    <div className="header-home"></div>
                     <div className="pic">
                         <Avatar size="lg" circle style={ { background:"orange",height:100,width:100 } }>
                                 profile</Avatar>
                     </div>
-                    <p className="body-text">You have successfully logged in to the application! </p>
+                    <p className="body-text-home">You have successfully logged in to the application! </p>
                     <div className="claim-box">claim details</div>
-                    <div className="button">
+                    <div className="button-home">
                         <Button onClick={ onLogout } appearance="primary"
                             style={ {
                                 backgroundColor:"#FF7300"
