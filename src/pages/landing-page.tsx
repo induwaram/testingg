@@ -9,7 +9,7 @@
 
 import { useAuthContext } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement } from "react";
-import { Container, Content, Footer} from "rsuite";
+import { Container, Content, Footer } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
 
