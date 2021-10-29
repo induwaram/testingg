@@ -7,6 +7,7 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
+import { useAuthContext } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement } from "react";
 import { Avatar, Button, Container, Content, Footer } from "rsuite";
 import { AppHeader } from "../components";
@@ -39,6 +40,8 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
         window.close();
     };
 
+    const { state, signIn, signOut } = useAuthContext();
+
     return(
         <div data-componentId={ componentId }>
             <Container>
@@ -56,6 +59,26 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                             style={ {
                                 backgroundColor:"#FF7300"
                             } }>Log Out</Button>    
+                    </div>
+                    <div>
+                        {
+                            state.isAuthenticated
+                                ? (
+                                    <div>
+                                        <ul>
+                                            <li>{ state.username }</li>
+                                        </ul>
+
+                                        <button onClick={ () => signOut() }>Logout</button>
+                                    </div>
+                                   
+                                )
+                                : <div>
+                                    <button onClick={ () => signIn() }>Login</button>
+                                    <div>{ state.username }</div>
+                                </div>
+                                
+                        }
                     </div>
                 </Content>
                 <Footer>
