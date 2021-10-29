@@ -9,7 +9,8 @@
 
 import { useAuthContext } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement } from "react";
-import { Container, Content, Footer } from "rsuite";
+import { Redirect } from "react-router";
+import { Button, Container, Content, Footer } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
 
@@ -33,10 +34,10 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
     }= props;
 
     /**
-     * Using the useAuthContext()hook
+     * Using the useAuthContext() hook
      * 
      */
-    const { state, signIn, signOut } = useAuthContext();
+    const { state, signIn } = useAuthContext();
     
     return(
         <div data-componentId = { componentId }>
@@ -57,14 +58,16 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                             state.isAuthenticated
                                 ? (
                                     <div>
-                                        <ul>
-                                            <li>{ state.username }</li>
-                                        </ul>
-
-                                        <button onClick={ () => signOut() }>Logout</button>
+                                        <Redirect to="/home"></Redirect>
                                     </div>
+                                   
                                 )
-                                : <button onClick={ () => signIn() }>Login</button>
+                                : <div>
+                                    <Button  appearance="primary" className="button-home" onClick={ () => 
+                                        signIn() }>Login</Button>
+                                    <div>{ state.username }</div>
+                                </div>
+                                
                         }
                     </div>
                 </Content>
