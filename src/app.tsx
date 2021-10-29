@@ -9,7 +9,7 @@
 
 import { AuthProvider, SecureRoute } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement, useEffect } from "react";
-import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
+import { Redirect, Route, BrowserRouter as Router } from "react-router-dom";
 import { HomePage, LandingPage } from "./pages";
 
 const APP_CLIENT_ID_STORAGE_KEY: string = "APP_CLIENT_ID";
