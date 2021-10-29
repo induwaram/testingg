@@ -64,9 +64,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                                 : <div>
                                     <Button  appearance="primary" className="button-home" onClick={ () => 
                                         signIn() }>Login</Button>
-                                    <div>{ state.username }</div>
-                                </div>
-                                
+                                </div>     
                         }
                     </div>
                 </Content>
