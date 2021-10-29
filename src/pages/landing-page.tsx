@@ -37,7 +37,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
      * Using the useAuthContext()hook
      * 
      */
-    const { state, signIn, signOut } = useAuthContext();
+    const { state, signIn } = useAuthContext();
     
     return(
         <div data-componentId = { componentId }>
