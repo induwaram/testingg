@@ -60,7 +60,6 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                                     <div>
                                         <Redirect to="/home"></Redirect>
                                     </div>
-                                   
                                 )
                                 : <div>
                                     <Button  appearance="primary" className="button-home" onClick={ () => 
