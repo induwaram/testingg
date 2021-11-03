@@ -34,12 +34,8 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
     }= props;
 
     /**
-     * function for the on logout click
+     * Declaring useAuthContext
      */
-    const onLogout = () => {
-        window.close();
-    };
-
     const { state, signIn, signOut } = useAuthContext();
 
     return(
@@ -53,32 +49,28 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                                 profile</Avatar>
                     </div>
                     <p className="body-text-home">You have successfully logged in to the application! </p>
-                    <div className="claim-box">claim details</div>
+                    <div className="claim-box">{
+                        state.isAuthenticated
+                            ? (
+                                <div>
+                                    <ul>
+                                        <li>UserName : { state.username }</li>
+                                    </ul>
+                                </div>
+    
+                            )
+                            : <div>
+                                <button onClick={ () => signIn() }>Login</button>
+                                <div>{ state.username }</div>
+                            </div>
+                    }
+                       
+                    </div>
                     <div className="button-home">
-                        <Button onClick={ onLogout } appearance="primary"
+                        <Button onClick={ () => signOut() } appearance="primary"
                             style={ {
                                 backgroundColor:"#FF7300"
                             } }>Log Out</Button>    
-                    </div>
-                    <div>
-                        {
-                            state.isAuthenticated
-                                ? (
-                                    <div>
-                                        <ul>
-                                            <li>{ state.username }</li>
-                                        </ul>
-
-                                        <button onClick={ () => signOut() }>Logout</button>
-                                    </div>
-                                   
-                                )
-                                : <div>
-                                    <button onClick={ () => signIn() }>Login</button>
-                                    <div>{ state.username }</div>
-                                </div>
-                                
-                        }
                     </div>
                 </Content>
                 <Footer>
