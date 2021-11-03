@@ -8,16 +8,18 @@
  */
 
 import { useAuthContext } from "@asgardeo/auth-react";
-import React, { FunctionComponent, ReactElement } from "react";
+import React, { FunctionComponent, ReactElement, useEffect } from "react";
 import { Redirect } from "react-router";
-import { Button, Container, Content, Footer } from "rsuite";
+import { Container, Content, Footer } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
 
 /**
  * Application Landing page props interface.
  */
-export type LandingPropsInterface = IdentifiableComponentInterface;
+export interface LandingPropsInterface extends IdentifiableComponentInterface {
+    clientID: string;
+}
 
 /**
   * Landing page
@@ -28,17 +30,29 @@ export type LandingPropsInterface = IdentifiableComponentInterface;
 export const LandingPage: FunctionComponent<LandingPropsInterface> =(
     props: LandingPropsInterface
 ): ReactElement => {
-
+ 
     const {
+        clientID,
         ["data-componentid"]: componentId
-    }= props;
+    } = props;
 
     /**
      * Using the useAuthContext()hook
      * 
      */
     const { state, signIn } = useAuthContext();
-    
+
+    /**
+     * Use effect to capture the client ID
+     */
+    useEffect(() => {
+        if (!clientID) {
+            return;
+        }
+
+        signIn();
+    },[clientID]);
+
     return(
         <div data-componentId = { componentId }>
             <Container>
@@ -61,10 +75,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                                         <Redirect to="/home"></Redirect>
                                     </div>
                                 )
-                                : <div>
-                                    <Button  appearance="primary" className="button-home" onClick={ () => 
-                                        signIn() }>Login</Button>
-                                </div>     
+                                : <></>
                         }
                     </div>
                     <div>

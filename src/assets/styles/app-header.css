@@ -14,14 +14,9 @@
     background: linear-gradient(to right, #4A00E0, #8E2DE2); 
 }
 
-.avatar {
-    background-color: black;
-    height: fit-content;
-}
-
 .pic {
     margin-top: -50px;
-    margin-left:650px;
+    text-align: center;
 }
 
 .body-text-home {
@@ -32,6 +27,7 @@
 }
 
 .claim-box {
+    text-align: center;
     background-color: black;
     width: 600px;
     margin-left: 400px;
@@ -39,7 +35,6 @@
     color: white;
     justify-content: center;
     border-radius: 10px;
-    text-align: center;
 }
 
 .button-home {
