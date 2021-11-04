@@ -7,7 +7,7 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import React, { FunctionComponent, ReactElement} from "react";
+import React, { FunctionComponent, ReactElement } from "react";
 import { Container, Content, Footer } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
