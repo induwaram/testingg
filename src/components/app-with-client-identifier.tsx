@@ -11,12 +11,16 @@ import { AuthProvider } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { SecureRouteWithRedirect } from "./secure-route-with-redirect";
-import { HomePage, LandingPage } from "../pages";
+import { HomePage } from "../pages";
+import { LoginPage } from "../pages/log-in-page";
 
 /**
  * app with client identifier props interface 
  */
 export interface AppWithClientIdentifierPropsInterface {
+    /**
+	 * Client Identifier of the application.
+	 */
     clientId: string;
 }
 
@@ -39,10 +43,10 @@ export const AppWithClientIdentifier: FunctionComponent<AppWithClientIdentifierP
 
     return (
         <AuthProvider
-            fallback={ <LandingPage clientID= { clientId } /> }
+            fallback={ <LoginPage clientID= { clientId } /> }
             config={ {
                 clientID: clientId,
-                scope: ["openid", "profile"],
+                scope: [ "openid", "profile" ],
                 serverOrigin: "https://stage.api.asgardeo.io/t/wsow",
                 signInRedirectURL: "http://localhost:3000/",
                 signOutRedirectURL: "http://localhost:3000/"
@@ -50,7 +54,7 @@ export const AppWithClientIdentifier: FunctionComponent<AppWithClientIdentifierP
         >
             <Router>
                 <Route path="/" exact>
-                    <LandingPage clientID={ clientId } />
+                    <LoginPage clientID={ clientId } />
                 </Route>
                 <SecureRouteWithRedirect exact path="/home" component={ HomePage } />
             </Router>

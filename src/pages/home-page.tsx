@@ -9,7 +9,7 @@
 
 import { useAuthContext } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement } from "react";
-import { Avatar, Button, Container, Content, Footer } from "rsuite";
+import { Avatar, Button, Container, Content, Footer, List } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
 
@@ -34,9 +34,14 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
     }= props;
 
     /**
-     * Declaring useAuthContext
+     * Desctructuring the context from `useAuthContext` hook.
      */
     const { state, signIn, signOut } = useAuthContext();
+
+    const onLogout = () => {
+        window.sessionStorage.removeItem("APP_CLIENT_ID");
+        signOut();
+    };
 
     return(
         <div data-componentId={ componentId }>
@@ -48,14 +53,15 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                         <Avatar size="lg" circle style={ { background:"orange",height:100,width:100 } }>
                                 profile</Avatar>
                     </div>
-                    <p className="body-text-home">You have successfully logged in to the application! </p>
+                    <p className="body-text-home">You have successfully logged in to the application!</p>
                     <div className="claim-box">{
                         state.isAuthenticated
                             ? (
                                 <div>
-                                    <ul>
-                                        <li>UserName : { state.username }</li>
-                                    </ul>
+                                    <List className="list" bordered >    
+                                       User Name : { state.username }
+                                    </List>
+                        
                                 </div>
     
                             )
@@ -67,7 +73,7 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                        
                     </div>
                     <div className="button-home">
-                        <Button onClick={ () => signOut() } appearance="primary"
+                        <Button onClick={ onLogout } appearance="primary"
                             style={ {
                                 backgroundColor:"#FF7300"
                             } }>Log Out</Button>    

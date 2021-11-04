@@ -7,9 +7,7 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import { useAuthContext } from "@asgardeo/auth-react";
-import React, { FunctionComponent, ReactElement, useEffect } from "react";
-import { Redirect } from "react-router";
+import React, { FunctionComponent, ReactElement} from "react";
 import { Container, Content, Footer } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
@@ -17,23 +15,20 @@ import { IdentifiableComponentInterface } from "../models/core";
 /**
  * Application Landing page props interface.
  */
-export interface LandingPropsInterface extends IdentifiableComponentInterface {
-    clientID: string;
-}
+export type LandingPropsInterface = IdentifiableComponentInterface;
 
 /**
-  * Landing page
-  *
-  * @param {LandingPropsInterface} props - Props injected to the component.
-  * @return {React.ReactElement}
-  */
+ * Landing page
+ *
+ * @param {LandingPropsInterface} props - Props injected to the component.
+ * @return {React.ReactElement}
+ */
 export const LandingPage: FunctionComponent<LandingPropsInterface> =(
     props: LandingPropsInterface
 ): ReactElement => {
  
     const {
-        clientID,
-        ["data-componentid"]: componentId
+        [ "data-componentid" ]: componentId
     } = props;
 
     /**

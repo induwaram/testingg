@@ -8,8 +8,8 @@
  */
 
 import React, { FunctionComponent, ReactElement, useEffect } from "react";
-import { Loader } from "rsuite";
 import { AppWithClientIdentifier } from "./components";
+import { LandingPage } from "./pages";
 
 import { HomePage, LandingPage } from "./pages";
  
@@ -40,8 +40,10 @@ export const App: FunctionComponent = (): ReactElement => {
     
     return (
         window.sessionStorage.getItem(APP_CLIENT_ID_STORAGE_KEY)
-            ? <AppWithClientIdentifier clientId={ window.sessionStorage.
-                getItem(APP_CLIENT_ID_STORAGE_KEY) as string } />
-            : <Loader center content="loading" />
+            ? (
+                <AppWithClientIdentifier clientId={ window.sessionStorage.
+                    getItem(APP_CLIENT_ID_STORAGE_KEY) as string } />
+            )
+            : <LandingPage />
     );
 };
