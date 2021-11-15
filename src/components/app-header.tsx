@@ -8,7 +8,7 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import { Button, Header, Nav, Navbar } from "rsuite";
+import { Header, Nav, Navbar } from "rsuite";
 import logo from "../assets/images/branding/asgardeo-logo.svg";
 import { IdentifiableComponentInterface } from "../models/core";
 
@@ -43,9 +43,6 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
             <Navbar className="app-header">
                 <Nav >
                     <img src ={ logo } className="logo" onClick={ onLogoClick }></img>
-                </Nav>
-                <Nav pullRight>
-                    <Button appearance="primary">Docs</Button>
                 </Nav>
             </Navbar> 
         </Header>

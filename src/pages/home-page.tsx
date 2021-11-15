@@ -40,6 +40,7 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
 
     const onLogout = () => {
         window.sessionStorage.removeItem("APP_CLIENT_ID");
+        window.sessionStorage.removeItem("APP_TENANT");
         signOut();
     };
 
@@ -63,7 +64,6 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                                     </List>
                         
                                 </div>
-    
                             )
                             : <div>
                                 <button onClick={ () => signIn() }>Login</button>

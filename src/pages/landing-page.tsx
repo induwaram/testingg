@@ -56,7 +56,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                     <div>
                         <div className="header-landing">
                             <div className="welcome-text-landing">
-                                <p>Hey There,  Welcome to Asgardeo Playground !</p>
+                                <p>Hey There,  Welcome to Asgardeo Playground!</p>
                             </div>
                         </div>
                         <p className="body-text-landing">You can visit <span style={ { color:"#FF7300" } }>
