@@ -22,6 +22,10 @@ export interface AppWithClientIdentifierPropsInterface {
 	 * Client Identifier of the application.
 	 */
     clientId: string;
+    /**
+	 * Tenant Identifier of the application.
+	 */
+     tenant: string;
 }
 
 /**
@@ -34,6 +38,7 @@ export const AppWithClientIdentifier: FunctionComponent<AppWithClientIdentifierP
 ): ReactElement => {
 
     const  {
+        tenant,
         clientId
     } = props;
 
@@ -47,7 +52,7 @@ export const AppWithClientIdentifier: FunctionComponent<AppWithClientIdentifierP
             config={ {
                 clientID: clientId,
                 scope: [ "openid", "profile" ],
-                serverOrigin: "https://stage.api.asgardeo.io/t/wsow",
+                serverOrigin: "https://stage.api.asgardeo.io/t/"+ tenant,
                 signInRedirectURL: "http://localhost:3000/",
                 signOutRedirectURL: "http://localhost:3000/"
             } }

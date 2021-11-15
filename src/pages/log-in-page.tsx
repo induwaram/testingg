@@ -53,7 +53,7 @@ export const LoginPage: FunctionComponent<LandingPropsInterface> =(
         }
  
         signIn();
-    },[clientID]);
+    },[ clientID ]);
  
     return(
         <div data-componentId = { componentId }>
@@ -64,7 +64,7 @@ export const LoginPage: FunctionComponent<LandingPropsInterface> =(
                             <Redirect to="/home"></Redirect>
                         </div>
                     )
-                    :<Loader backdrop content="Taking you to the Application" />
+                    :<Loader backdrop content="Loading.." />
             }
         </div>
     );
