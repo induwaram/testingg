@@ -49,4 +49,17 @@ git -C "$REPO_DIR" push
 
 mkdir asgardeo-deployment-pipeline
 
+git clone https://$GIT_USERNAME:"$GIT_TOKEN"@github.com/wso2-enterprise/asgardeo-deployment-pipeline.git asgardeo-deployment-pipeline
+git -C asgardeo-deployment-pipeline config user.name "$GIT_USERNAME"
+git -C asgardeo-deployment-pipeline config user.email "iam-cloud@wso2.com"
+git -C asgardeo-deployment-pipeline checkout dev-001
+
+REF_IN_DEV=$(grep 'GITHUB_RELEASE_TAG:' "$REPO_DIR"/asgardeo-deployment-pipeline/cd-pipelines/docs/dev-setup-variables.yaml)
+sed -i 's|'"${REF_IN_DEV}"'|  GITHUB_RELEASE_TAG: v'"${VERSION}"'|' "$REPO_DIR"/asgardeo-deployment-pipeline/cd-pipelines/docs/dev-setup-variables.yaml
+
+# Push new release version to dev-deploy.yaml.
+git -C asgardeo-deployment-pipeline add "$REPO_DIR"/asgardeo-deployment-pipeline/cd-pipelines/docs/dev-setup-variables.yaml
+git -C asgardeo-deployment-pipeline commit -m "[Dev] Update asgardeo-login-playground release version to - $VERSION"
+git -C asgardeo-deployment-pipeline push origin dev-001
+
 echo "Release builder execution is completed."
