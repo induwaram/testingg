@@ -28,4 +28,4 @@ jobs:
       - name: Build and Release version
         env:
           ACCESS_TOKEN: ${{ secrets.ASGARDEO_LOGIN_PLAYGROUND_TOKEN }}
-        run: bash scripts/release-artifacts.sh $GITHUB_WORKSPACE $ACCESS_TOKEN
+        run: bash ./scripts/release-artifacts.sh $GITHUB_WORKSPACE $ACCESS_TOKEN
