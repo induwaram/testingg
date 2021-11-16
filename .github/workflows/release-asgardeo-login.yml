@@ -28,6 +28,7 @@ jobs:
         with:
           token: ${{ secrets.ASGARDEO_LOGIN_PLAYGROUND_TOKEN }}
       - name: Build and Release version
+        working-directory: .github/workflows
         env:
           ACCESS_TOKEN: ${{ secrets.ASGARDEO_LOGIN_PLAYGROUND_TOKEN }}
         run: bash ./scripts/release-artifacts.sh $GITHUB_WORKSPACE $ACCESS_TOKEN
