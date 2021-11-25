@@ -20,7 +20,6 @@ const APP_CLIENT_ID_STORAGE_KEY: string = "APP_CLIENT_ID";
  */
 const APP_TENANT_STORAGE_KEY: string = "APP_TENANT";
 
-
 /**
  * Main App component.
  *
