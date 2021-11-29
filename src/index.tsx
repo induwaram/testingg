@@ -10,6 +10,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./app";
+import "./assets/styles/index.css";
+import "rsuite/dist/rsuite.min.css";
 
 ReactDOM.render(
     <React.StrictMode>

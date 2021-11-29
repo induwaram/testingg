@@ -14,14 +14,9 @@
     background: linear-gradient(to right, #4A00E0, #8E2DE2); 
 }
 
-.avatar {
-    background-color: black;
-    height: fit-content;
-}
-
 .pic {
     margin-top: -50px;
-    margin-left:650px;
+    text-align: center;
 }
 
 .body-text-home {
@@ -32,19 +27,25 @@
 }
 
 .claim-box {
-    background-color: black;
-    width: 600px;
-    margin-left: 400px;
-    height: 82px;
-    color: white;
-    justify-content: center;
-    border-radius: 10px;
     text-align: center;
+    border-radius: 10px;
+    margin: auto;
+    width: 50%;
 }
 
 .button-home {
     justify-content: center;
-    margin-left: 660px;
     margin-top: 50px;
     margin-bottom: 100px;
+    text-align: center;
+}
+
+.list {
+    background-color: black;
+    color: white;
+    padding: 30px;
+}
+
+.app-header {
+    padding: 5px;
 }

@@ -8,7 +8,7 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import { Container, Content, Footer} from "rsuite";
+import { Container, Content, Footer } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
 
@@ -18,18 +18,18 @@ import { IdentifiableComponentInterface } from "../models/core";
 export type LandingPropsInterface = IdentifiableComponentInterface;
 
 /**
-  * Landing page
-  *
-  * @param {LandingPropsInterface} props - Props injected to the component.
-  * @return {React.ReactElement}
-  */
+ * Landing page
+ *
+ * @param {LandingPropsInterface} props - Props injected to the component.
+ * @return {React.ReactElement}
+ */
 export const LandingPage: FunctionComponent<LandingPropsInterface> =(
     props: LandingPropsInterface
 ): ReactElement => {
-
+ 
     const {
-        ["data-componentid"]: componentId
-    }= props;
+        [ "data-componentid" ]: componentId
+    } = props;
 
     return(
         <div data-componentId = { componentId }>
@@ -39,7 +39,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                     <div>
                         <div className="header-landing">
                             <div className="welcome-text-landing">
-                                <p>Hey There,  Welcome to Asgardeo Playground !</p>
+                                <p>Hey There,  Welcome to Asgardeo Playground!</p>
                             </div>
                         </div>
                         <p className="body-text-landing">You can visit <span style={ { color:"#FF7300" } }>

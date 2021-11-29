@@ -8,8 +8,7 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
-import { Button, FlexboxGrid, Header } from "rsuite";
-import FlexboxGridItem from "rsuite/esm/FlexboxGrid/FlexboxGridItem";
+import { Header, Nav, Navbar } from "rsuite";
 import logo from "../assets/images/branding/asgardeo-logo.svg";
 import { IdentifiableComponentInterface } from "../models/core";
 
@@ -19,12 +18,11 @@ import { IdentifiableComponentInterface } from "../models/core";
 export type HeaderPropsInterface = IdentifiableComponentInterface;
 
 /**
-  * Application Header component.
-  *
-  * @param {AppHeaderPropsInterface} props - Props injected to the component.
-  * @return {React.ReactElement}
-  */
- 
+ * Application Header component.
+ *
+ * @param {AppHeaderPropsInterface} props - Props injected to the component.
+ * @return {React.ReactElement}
+ */
 export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
     props: HeaderPropsInterface
 ): ReactElement => {
@@ -34,7 +32,7 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
     }= props;
  
     /**
-     * function for the on Log out click
+     * callback handler for the logo click event
      */
     const onLogoClick = () => {
         window.open("https://wso2.com/asgardeo/");
@@ -42,14 +40,11 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
 
     return(
         <Header data-componentId={ componentId } >
-            <FlexboxGrid>
-                <FlexboxGridItem colspan={ 23 }>
+            <Navbar className="app-header">
+                <Nav >
                     <img src ={ logo } className="logo" onClick={ onLogoClick }></img>
-                </FlexboxGridItem>
-                <FlexboxGridItem>
-                    <Button appearance="primary">Docs</Button>
-                </FlexboxGridItem>
-            </FlexboxGrid>    
+                </Nav>
+            </Navbar> 
         </Header>
     );
 };

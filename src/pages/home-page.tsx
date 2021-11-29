@@ -7,8 +7,9 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
+import { useAuthContext } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement } from "react";
-import { Avatar, Button, Container, Content, Footer } from "rsuite";
+import { Avatar, Button, Container, Content, Footer, List } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
 
@@ -33,10 +34,14 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
     }= props;
 
     /**
-     * function for the on logout click
+     * Desctructuring the context from `useAuthContext` hook.
      */
+    const { state, signIn, signOut } = useAuthContext();
+
     const onLogout = () => {
-        window.close();
+        window.sessionStorage.removeItem("APP_CLIENT_ID");
+        window.sessionStorage.removeItem("APP_TENANT");
+        signOut();
     };
 
     return(
@@ -49,8 +54,24 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                         <Avatar size="lg" circle style={ { background:"orange",height:100,width:100 } }>
                                 profile</Avatar>
                     </div>
-                    <p className="body-text-home">You have successfully logged in to the application! </p>
-                    <div className="claim-box">claim details</div>
+                    <p className="body-text-home">You have successfully logged in to the application!</p>
+                    <div className="claim-box">{
+                        state.isAuthenticated
+                            ? (
+                                <div>
+                                    <List className="list" bordered >    
+                                       User Name : { state.username }
+                                    </List>
+                        
+                                </div>
+                            )
+                            : <div>
+                                <button onClick={ () => signIn() }>Login</button>
+                                <div>{ state.username }</div>
+                            </div>
+                    }
+                       
+                    </div>
                     <div className="button-home">
                         <Button onClick={ onLogout } appearance="primary"
                             style={ {
