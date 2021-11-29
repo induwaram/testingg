@@ -1,5 +1,5 @@
 {
-  "name": "@asgardeo/apps",
+  "name": "@asgardeo/login-playground",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
