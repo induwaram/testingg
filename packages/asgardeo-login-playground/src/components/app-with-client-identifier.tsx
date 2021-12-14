@@ -52,9 +52,10 @@ export const AppWithClientIdentifier: FunctionComponent<AppWithClientIdentifierP
             config={ {
                 clientID: clientId,
                 scope: [ "openid", "profile" ],
-                serverOrigin: "https://stage.api.asgardeo.io/t/"+ tenant,
-                signInRedirectURL: "http://localhost:3000/",
-                signOutRedirectURL: "http://localhost:3000/"
+                serverOrigin: `${ process.env.REACT_APP_ASGARDEO_SERVER_ORIGIN }/${ 
+                    process.env.REACT_APP_ASGARDEO_TENANT_PREFIX }/${ tenant }`,
+                signInRedirectURL: process.env.REACT_APP_LOGIN_PLAYGROUND_SIGN_IN_REDIRECT_URL as string,
+                signOutRedirectURL: process.env.REACT_APP_LOGIN_PLAYGROUND_SIGN_OUT_REDIRECT_URL as string
             } }
         >
             <Router>
