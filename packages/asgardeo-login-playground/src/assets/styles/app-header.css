@@ -9,7 +9,6 @@
 
 .header-home {
     height: 200px;
-    background: #8E2DE2; 
     background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
     background: linear-gradient(to right, #4A00E0, #8E2DE2); 
 }
@@ -20,8 +19,8 @@
 }
 
 .body-text-home {
-    margin-top: 50px;
-    font-size: 25px;
+    margin-top: 300px;
+    font-size: 20px;
     margin-bottom: 50px;
     text-align: center;
 }
@@ -30,7 +29,8 @@
     text-align: center;
     border-radius: 10px;
     margin: auto;
-    width: 50%;
+    width: 70%;
+
 }
 
 .button-home {
@@ -43,9 +43,27 @@
 .list {
     background-color: black;
     color: white;
-    padding: 30px;
+    padding: 50px;
+    height: 200px;
+    align-items: center;
 }
 
 .app-header {
     padding: 5px;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    left: 70px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.header-button {
+    position: fixed;
+    left: 900px;
+    color: #FFB000;
 }
