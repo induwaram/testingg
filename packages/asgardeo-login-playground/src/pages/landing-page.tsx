@@ -55,12 +55,18 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                 <Content> 
                     <div>
                         <div className="header-landing">
-                            <div className="welcome-text-landing">
-                                <p>Hey There,  Welcome to Asgardeo Playground!</p>
+                            <div className="welcome-text-landing-heading">
+                                <p>Hey There!</p>
+                            </div>
+                            <div className="welcome-text-landing-content">
+                                <p> Welcome to Asgardeo Playground!</p>
                             </div>
                         </div>
-                        <p className="body-text-landing">You can visit <span style={ { color:"#FF7300" } }>
-                            console</span> to make an account and try out the playground </p>
+                        <div className="landing-illustration">
+                        </div>
+                        <p className="body-text-landing">If you already have an Asgardeo Account, 
+                        you can visit <span style={ { color:"#FF7300" } }>
+                            Console</span> and<br></br> create a Customer account to try out the playground.</p>
                     </div>
                     <div>
                         {

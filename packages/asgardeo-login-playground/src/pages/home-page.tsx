@@ -9,7 +9,7 @@
 
 import { useAuthContext } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement } from "react";
-import { Avatar, Button, Container, Content, Footer, List } from "rsuite";
+import { Button, Container, Content, Footer, List, Panel } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
 
@@ -49,20 +49,26 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
             <Container>
                 <AppHeader />
                 <Content>
-                    <div className="header-home"></div>
-                    <div className="pic">
-                        <Avatar size="lg" circle style={ { background:"orange",height:100,width:100 } }>
-                                profile</Avatar>
+                    <div className="header-landing">
+                        <div className="welcome-text-landing-heading">
+                            <p>Hey There!</p>
+                        </div>
+                        <div className="welcome-text-landing-content">
+                            <p> Welcome to Asgardeo Playground!</p>
+                        </div>
                     </div>
                     <p className="body-text-home">You have successfully logged in to the application!</p>
                     <div className="claim-box">{
                         state.isAuthenticated
                             ? (
                                 <div>
-                                    <List className="list" bordered >    
-                                       User Name : { state.username }
-                                    </List>
-                        
+                                    <Panel className="claim-box" header="User Attributes" bordered>
+                                        <List className="list" bordered >    
+                                            First Name : { state.username } <br></br>
+                                            Last Name : { state.username } <br></br>
+                                            Email : { state.username } <br></br>
+                                        </List>
+                                    </Panel>
                                 </div>
                             )
                             : <div>

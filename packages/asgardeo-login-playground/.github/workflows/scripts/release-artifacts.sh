@@ -58,7 +58,7 @@ REF_IN_DEV=$(grep 'GITHUB_RELEASE_TAG:' "$REPO_DIR"/asgardeo-deployment-pipeline
 sed -i 's|'"${REF_IN_DEV}"'|  GITHUB_RELEASE_TAG: v'"${VERSION}"'|' "$REPO_DIR"/asgardeo-deployment-pipeline/cd-pipelines/login-playground/dev-setup-variables.yaml
 
 # Push new release version to dev-deploy.yaml.
-git -C asgardeo-deployment-pipeline add "$REPO_DIR"/asgardeo-deployment-pipeline/cd-pipelines/docs/dev-setup-variables.yaml
+git -C asgardeo-deployment-pipeline add "$REPO_DIR"/asgardeo-deployment-pipeline/cd-pipelines/login-playground/dev-setup-variables.yaml
 git -C asgardeo-deployment-pipeline commit -m "[Dev] Update asgardeo-login-playground release version to - $VERSION"
 git -C asgardeo-deployment-pipeline push origin dev-001
 
