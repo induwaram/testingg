@@ -35,16 +35,23 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
      * callback handler for the logo click event
      */
     const onLogoClick = () => {
-        window.open("https://wso2.com/asgardeo/");
+        window.open(process.env.REACT_APP_DOCS_URL);
     };
 
     return(
         <Header data-componentId={ componentId } >
-            <div className="app-header">
+            <div>
                 <img src ={ logo } className="logo" onClick={ onLogoClick }></img>
                 <span className="logo-text">Playground</span>
-                <Button className="header-button"  color="orange" appearance="ghost">Sign up to Asgardeo</Button>
-            </div> 
+            </div>
+            <Button
+                className="header-button"  
+                color="orange" 
+                appearance="ghost" 
+                onClick={ () => window.open(process.env.REACT_APP_DOCS_URL) }  
+            >
+                        Sign up to Asgardeo
+            </Button>
         </Header>
     );
 };

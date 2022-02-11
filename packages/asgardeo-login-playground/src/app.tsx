@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.com). All Rights Reserved.
+ * Copyright (c) 2022, WSO2 Inc. (http://www.wso2.com). All Rights Reserved.
  *
  * This software is the property of WSO2 Inc. and its suppliers, if any.
  * Dissemination of any information or reproduction of any material contained
@@ -7,43 +7,55 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import React, { FunctionComponent, ReactElement, useEffect } from "react";
+import React, { FunctionComponent, ReactElement, useEffect, useState } from "react";
 import { AppWithClientIdentifier } from "./components";
 import { LandingPage } from "./pages";
-
+ 
 /**
- * constant to store the client id in storage
- */
+  * constant to store the client id in storage
+  */
 const APP_CLIENT_ID_STORAGE_KEY: string = "APP_CLIENT_ID";
 /**
- * constant to store the tenant in storage
- */
+  * constant to store the tenant in storage
+  */
 const APP_TENANT_STORAGE_KEY: string = "APP_TENANT";
-
+ 
 /**
- * Main App component.
- *
- * @return {React.Element}
- */
+  * Main App component.
+  *
+  * @return {React.Element}
+  */
 export const App: FunctionComponent = (): ReactElement => {
+  
+    const [
+        isClientIdInStorage,
+        setIsClientIdInStorage
+    ] = useState<boolean>(!!window.sessionStorage.getItem(APP_CLIENT_ID_STORAGE_KEY));
  
     const clientIdSearchParam: string = new URL(window.location.href).searchParams.get("client_id") as string;
     const tenant : string = new URL(window.location.href).searchParams.get("org") as string;
-
+ 
     /**
-     * Use effect to capture the client ID
-     */
+      * Hook to update the session storage when the `clientId` and the `org` is available in the URL params.
+      */
     useEffect(() => {
-        if (!clientIdSearchParam) {
+        if (!clientIdSearchParam || !tenant) {
             return;
         }
-
+ 
         window.sessionStorage.setItem(APP_CLIENT_ID_STORAGE_KEY, clientIdSearchParam);
         window.sessionStorage.setItem(APP_TENANT_STORAGE_KEY, tenant);
-    }, [ new URL(window.location.href).searchParams.get("client_id") ]);
-    
+    }, [ clientIdSearchParam, tenant ]);
+ 
+    /**
+      * Hook to update the internal state when the clientId in the storage changes.
+      */
+    useEffect(() => {
+        setIsClientIdInStorage(!!window.sessionStorage.getItem(APP_CLIENT_ID_STORAGE_KEY));
+    }, [ isClientIdInStorage ]);
+ 
     return (
-        window.sessionStorage.getItem(APP_CLIENT_ID_STORAGE_KEY)
+        isClientIdInStorage
             ? (
                 <AppWithClientIdentifier clientId={ window.sessionStorage.
                     getItem(APP_CLIENT_ID_STORAGE_KEY) as string } tenant= { window.sessionStorage.

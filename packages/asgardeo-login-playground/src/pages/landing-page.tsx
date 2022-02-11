@@ -33,7 +33,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
 
     return(
         <div data-componentId = { componentId }>
-            <Container>
+            <Container className="body-bg">
                 <AppHeader />
                 <Content> 
                     <div>
@@ -54,7 +54,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                 </Content>
                 <Footer>
                     <div className="footer">
-                        Powered By Asgardeo | 2021
+                        <span>&copy;</span>2021 WSO2 
                     </div>
                 </Footer>
             </Container>

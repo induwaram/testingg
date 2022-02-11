@@ -51,7 +51,7 @@ export const LoginPage: FunctionComponent<LandingPropsInterface> =(
         if (!clientID) {
             return;
         }
- 
+        
         signIn();
     },[ clientID ]);
  

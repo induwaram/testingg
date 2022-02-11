@@ -87,7 +87,7 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                 </Content>
                 <Footer>
                     <div className="footer">
-                        Powered By Asgardeo | 2021
+                        <span>&copy;</span> { " " }2022 WSO2
                     </div>
                 </Footer>
             </Container>

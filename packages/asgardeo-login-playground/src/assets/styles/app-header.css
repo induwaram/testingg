@@ -19,7 +19,7 @@
 }
 
 .body-text-home {
-    margin-top: 300px;
+    margin-top: 230px;
     font-size: 20px;
     margin-bottom: 50px;
     text-align: center;
@@ -47,12 +47,14 @@
     align-items: center;
 }
 
-.app-header {
-    padding: 5px;
+
+header.rs-header {
     position: fixed;
-    top: 40px;
-    width: 100%;
-    left: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-left: 175px;
+    margin-right: 175px;
 }
 
 .logo-text {
@@ -62,7 +64,6 @@
 }
 
 .header-button {
-    position: fixed;
-    left: 900px;
-    color: #FFB000;
+    color: #FF7403 !important;
+    margin-left: 939px;
 }
