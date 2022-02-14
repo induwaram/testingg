@@ -54,7 +54,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                 </Content>
                 <Footer>
                     <div className="footer">
-                        <span>&copy;</span>2021 WSO2 
+                        <span>&copy;</span> { " " } 2022 WSO2 
                     </div>
                 </Footer>
             </Container>
