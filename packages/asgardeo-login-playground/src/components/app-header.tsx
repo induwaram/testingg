@@ -50,7 +50,7 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
                 appearance="ghost" 
                 onClick={ () => window.open(process.env.REACT_APP_DOCS_URL) }  
             >
-                        Sign up to Asgardeo
+                        Go to Asgardeo
             </Button>
         </Header>
     );
