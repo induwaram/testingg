@@ -15,7 +15,6 @@ import { IdentifiableComponentInterface } from "../models/core";
 /**
  * Application Header props interface.
  */
-
  interface HeaderPropsInterface extends IdentifiableComponentInterface {
     isLoggedOut: boolean;
 }

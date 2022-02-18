@@ -30,7 +30,6 @@ const APP_STATE_STORAGE_KEY: string = "APP_STATE";
   * @return {React.Element}
   */
 export const App: FunctionComponent = (): ReactElement => {
-  
     const [
         isClientIdInStorage,
         setIsClientIdInStorage
