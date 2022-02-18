@@ -47,7 +47,7 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
     return(
         <div data-componentId={ componentId }>
             <Container>
-                <AppHeader />
+                <AppHeader isLoggedOut= { false } />
                 <Content>
                     <div className="header-landing">
                         <div className="welcome-text-landing-heading">

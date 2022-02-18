@@ -19,6 +19,10 @@ const APP_CLIENT_ID_STORAGE_KEY: string = "APP_CLIENT_ID";
   * constant to store the tenant in storage
   */
 const APP_TENANT_STORAGE_KEY: string = "APP_TENANT";
+/**
+  * constant to store the state in storage
+  */
+const APP_STATE_STORAGE_KEY: string = "APP_STATE";
  
 /**
   * Main App component.
@@ -34,12 +38,20 @@ export const App: FunctionComponent = (): ReactElement => {
  
     const clientIdSearchParam: string = new URL(window.location.href).searchParams.get("client_id") as string;
     const tenant : string = new URL(window.location.href).searchParams.get("org") as string;
+    const [ isLoggedOut, setIsLoggedOut ] = React.useState(false);
+
  
     /**
       * Hook to update the session storage when the `clientId` and the `org` is available in the URL params.
       */
     useEffect(() => {
         if (!clientIdSearchParam || !tenant) {
+            const state : string = new URL(window.location.href).searchParams.get("state") as string;
+            window.sessionStorage.setItem(APP_STATE_STORAGE_KEY, state);
+            if (window.sessionStorage.
+                getItem(APP_STATE_STORAGE_KEY) as string === "sign_out_success"){
+                setIsLoggedOut(true);
+            }
             return;
         }
  
@@ -61,6 +73,6 @@ export const App: FunctionComponent = (): ReactElement => {
                     getItem(APP_CLIENT_ID_STORAGE_KEY) as string } tenant= { window.sessionStorage.
                         getItem(APP_TENANT_STORAGE_KEY) as string } />
             )
-            : <LandingPage />
+            : <LandingPage isLoggedOut= { isLoggedOut } />
     );
 };

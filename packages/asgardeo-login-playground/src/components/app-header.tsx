@@ -15,7 +15,10 @@ import { IdentifiableComponentInterface } from "../models/core";
 /**
  * Application Header props interface.
  */
-export type HeaderPropsInterface = IdentifiableComponentInterface;
+
+ interface HeaderPropsInterface extends IdentifiableComponentInterface {
+    isLoggedOut: boolean;
+}
 
 /**
  * Application Header component.
@@ -28,6 +31,7 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
 ): ReactElement => {
 
     const {
+        isLoggedOut,
         [ "data-componentid" ]: componentId
     }= props;
  
@@ -44,14 +48,18 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
                 <img src ={ logo } className="logo" onClick={ onLogoClick }></img>
                 <span className="logo-text">Playground</span>
             </div>
-            <Button
-                className="header-button"  
-                color="orange" 
-                appearance="ghost" 
-                onClick={ () => window.open(process.env.REACT_APP_DOCS_URL) }  
-            >
-                        Go to Asgardeo
-            </Button>
+            { isLoggedOut 
+                ?
+                <></>
+                :<Button
+                    className="header-button"  
+                    color="orange" 
+                    appearance="ghost" 
+                    onClick={ () => window.open(process.env.REACT_APP_DOCS_URL) }  
+                >
+                Go to Asgardeo
+                </Button> 
+            }
         </Header>
     );
 };

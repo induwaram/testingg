@@ -15,7 +15,9 @@ import { IdentifiableComponentInterface } from "../models/core";
 /**
  * Application Landing page props interface.
  */
-export type LandingPropsInterface = IdentifiableComponentInterface;
+interface LandingPropsInterface extends IdentifiableComponentInterface{
+    isLoggedOut: boolean;
+}
 
 /**
  * Landing page
@@ -28,13 +30,14 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
 ): ReactElement => {
  
     const {
+        isLoggedOut,
         [ "data-componentid" ]: componentId
     } = props;
 
     return(
         <div data-componentId = { componentId }>
             <Container className="body-bg">
-                <AppHeader />
+                <AppHeader isLoggedOut= { isLoggedOut }/>
                 <Content> 
                     <div>
                         <div className="header-landing">
@@ -47,9 +50,14 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                         </div>
                         <div className="landing-illustration">
                         </div>
-                        <p className="body-text-landing">If you already have an Asgardeo Account, 
-                        you can visit <span style={ { color:"#FF7300" } }>
-                            Console</span> and<br></br> create a Customer account to try out the playground.</p>
+                        { !isLoggedOut 
+                            ?(
+                                <p className="body-text-landing">If you already have an Asgardeo Account, 
+                                you can visit <span style={ { color:"#FF7300" } }>
+                                Console</span> and<br></br> create a Customer account to try out the playground.</p>
+                            ): <p className="body-text-landing">You have logged out</p>
+                        }
+                        
                     </div>
                 </Content>
                 <Footer>
