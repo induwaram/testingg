@@ -54,7 +54,7 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
                     className="header-button"  
                     color="orange" 
                     appearance="ghost" 
-                    onClick={ () => window.open(process.env.REACT_APP_DOCS_URL) }  
+                    onClick={ () => window.open(process.env.REACT_APP_CONSOLE_URL) }  
                 >
                 Go to Asgardeo
                 </Button> 

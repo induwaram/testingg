@@ -52,12 +52,13 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                         </div>
                         { !isLoggedOut 
                             ?(
-                                <p className="body-text-landing">If you already have an Asgardeo Account, 
-                                you can visit <span style={ { color:"#FF7300" } }>
-                                Console</span> and<br></br> create a Customer account to try out the playground.</p>
-                            ): <p className="body-text-landing">You have logged out</p>
+                                <p className="body-text-landing">
+                                    If you dont have an Asgardeo Account , you can register for one from { " " }  
+                                    <a style={ { color:"#FF7300" } } 
+                                        onClick={ () => window.open(process.env.REACT_APP_DOCS_URL) }>
+                                            here.</a> <br></br></p>
+                            ): <p className="body-text-landing">You have logged out</p>       
                         }
-                        
                     </div>
                 </Content>
                 <Footer>
