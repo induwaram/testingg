@@ -57,7 +57,7 @@ export const LandingPage: FunctionComponent<LandingPropsInterface> =(
                                     <a style={ { color:"#FF7300" } } 
                                         onClick={ () => window.open(process.env.REACT_APP_DOCS_URL) }>
                                             here.</a> <br></br></p>
-                            ): <p className="body-text-landing">You have logged out</p>       
+                            ): <p className="body-text-landing">You have logged out Successfully!</p>       
                         }
                     </div>
                 </Content>

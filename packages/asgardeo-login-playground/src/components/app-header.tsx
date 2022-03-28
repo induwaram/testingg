@@ -45,7 +45,7 @@ export const AppHeader: FunctionComponent<HeaderPropsInterface> = (
         <Header data-componentId={ componentId } >
             <div>
                 <img src ={ logo } className="logo" onClick={ onLogoClick }></img>
-                <span className="logo-text">Playground</span>
+                <span className="logo-text">Login App</span>
             </div>
             { isLoggedOut 
                 ?
