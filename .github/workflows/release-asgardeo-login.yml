@@ -31,4 +31,4 @@ jobs:
         working-directory: .github/workflows
         env:
           ACCESS_TOKEN: ${{ secrets.ASGARDEO_LOGIN_PLAYGROUND_TOKEN }}
-        run: bash .github/workflows/scripts/release-artifacts.sh $GITHUB_WORKSPACE $ACCESS_TOKEN
+        run: bash scripts/release-artifacts.sh $GITHUB_WORKSPACE $ACCESS_TOKEN
