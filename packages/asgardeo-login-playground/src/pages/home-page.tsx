@@ -8,7 +8,7 @@
  */
 
 import { useAuthContext } from "@asgardeo/auth-react";
-import React, { FunctionComponent, ReactElement } from "react";
+import React, { FunctionComponent, ReactElement, useState } from "react";
 import { Button, Container, Content, Footer, List, Panel } from "rsuite";
 import { AppHeader } from "../components";
 import { IdentifiableComponentInterface } from "../models/core";
@@ -36,13 +36,22 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
     /**
      * Desctructuring the context from `useAuthContext` hook.
      */
-    const { state, signIn, signOut } = useAuthContext();
+    const { state, signIn, signOut, getDecodedIDToken } = useAuthContext();
+    const [firstName, setfirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [email, setEmail] = useState();
 
     const onLogout = () => {
         window.sessionStorage.removeItem("APP_CLIENT_ID");
         window.sessionStorage.removeItem("APP_TENANT");
         signOut();
     };
+
+    //Getting the first name and the last name by decoding ID token
+    getDecodedIDToken().then((idToken) => {
+        setfirstName(idToken.family_name);
+        setLastName(idToken.given_name);
+    });
 
     return(
         <div data-componentId={ componentId }>
@@ -57,16 +66,16 @@ export const HomePage: FunctionComponent<HomePagePropsInterface> = (
                             <p> Welcome to Asgardeo Playground!</p>
                         </div>
                     </div>
-                    <p className="body-text-home">You have successfully logged in to the application!</p>
+                    <p className="body-text-home"></p>
                     <div className="claim-box">{
                         state.isAuthenticated
                             ? (
                                 <div>
                                     <Panel className="claim-box" header="User Attributes" bordered>
                                         <List className="list" bordered >    
-                                            First Name : { state.username } <br></br>
-                                            Last Name : { state.username } <br></br>
-                                            Email : { state.username } <br></br>
+                                            First Name : { firstName } <br></br>
+                                            Last Name : { lastName } <br></br>
+                                            Email : { lastName } <br></br>
                                         </List>
                                     </Panel>
                                 </div>
